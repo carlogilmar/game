@@ -15,7 +15,10 @@ config :coca_cola_game, CocaColaGameWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "RVXcQXfPmWaqL6lmRbXoRSlZcVR4PDc/XMdjC1aMLs97nbw++pBEBApfmPyvNDCm",
   render_errors: [view: CocaColaGameWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: CocaColaGame.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: CocaColaGame.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "p/+p/im0Xq0syPT/c+Su9p1GsAPwab3N"],
+  cloudinary_url: System.get_env("CLOUDINARY_CLOUD"),
+  cloudinary_preset: System.get_env("CLOUDINARY_PRESET")
 
 # Configures Elixir's Logger
 config :logger, :console,
