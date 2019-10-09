@@ -15,16 +15,25 @@ defmodule CocaColaGameWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :browser_pipeline do
+    plug CocaColaGame.Guardian.BrowserPipeline
+  end
+
+  pipeline :ensure_auth do
+    plug Guardian.Plug.EnsureAuthenticated
+  end
+
   scope "/", CocaColaGameWeb do
     pipe_through :browser
 
     get "/", PageController, :index
     get "/login", LoginController, :index
-    live "/live", FooLive
+    get "/logout", LoginController, :logout
+    post "/login", LoginController, :login
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", CocaColaGameWeb do
-  #   pipe_through :api
-  # end
+  scope "/home", CocaColaGameWeb do
+		pipe_through [:browser, :browser_pipeline, :ensure_auth]
+    live "/", FooLive
+  end
 end
