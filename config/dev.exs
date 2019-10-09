@@ -52,7 +52,9 @@ config :coca_cola_game, CocaColaGameWeb.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{lib/coca_cola_game_web/views/.*(ex)$},
-      ~r{lib/coca_cola_game_web/templates/.*(eex)$}
+      ~r{lib/coca_cola_game_web/templates/.*(eex)$},
+      ~r{lib/coca_cola_game_web/templates/.*(eex)$},
+      ~r{lib/coca_cola_game_web/live/.*(ex)$}
     ]
   ]
 
