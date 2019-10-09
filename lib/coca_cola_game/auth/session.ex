@@ -1,4 +1,5 @@
 defmodule CocaColaGame.Session do
+  @moduledoc false
   alias CocaColaGame.UserOperator
   @user_not_found "Usuario no encontrado"
   @wrong_password "Password inválida"

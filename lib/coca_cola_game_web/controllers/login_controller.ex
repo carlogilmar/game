@@ -1,5 +1,6 @@
 defmodule CocaColaGameWeb.LoginController do
   use CocaColaGameWeb, :controller
+  alias CocaColaGame.Guardian
   alias CocaColaGame.Session
 
   def index(conn, params) do
@@ -28,13 +29,13 @@ defmodule CocaColaGameWeb.LoginController do
   end
 
   defp login_reply({:ok, user}, conn) do
-    session = CocaColaGame.Guardian.encode_and_sign(user)
-    CocaColaGame.Guardian.Plug.sign_in(conn, session) |> redirect(to: "/home")
+    session = Guardian.encode_and_sign(user)
+    Guardian.Plug.sign_in(conn, session) |> redirect(to: "/home")
   end
 
   def logout(conn, _) do
     conn
-    |> CocaColaGame.Guardian.Plug.sign_out()
+    |> Guardian.Plug.sign_out()
     |> redirect(to: "/login")
   end
 end
