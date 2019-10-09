@@ -10,6 +10,7 @@ defmodule CocaColaGame.Session do
   end
 
   def ensure_password(nil, _password), do: {:error, @user_not_found}
+
   def ensure_password(user, password) do
     password
     |> Argon2.verify_pass(user.password)
@@ -18,5 +19,4 @@ defmodule CocaColaGame.Session do
 
   def auth_password_hash(true, user), do: {:ok, user}
   def auth_password_hash(false, _user), do: {:error, @wrong_password}
-
 end

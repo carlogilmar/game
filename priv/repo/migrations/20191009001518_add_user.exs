@@ -9,6 +9,7 @@ defmodule CocaColaGame.Repo.Migrations.AddUser do
       add :password, :string
       timestamps()
     end
+
     create unique_index(:users, [:username])
   end
 end

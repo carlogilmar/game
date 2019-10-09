@@ -2,6 +2,7 @@ defmodule CocaColaGameWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :coca_cola_game
 
   socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", CocaColaGameWeb.UserSocket,
     websocket: true,
     longpoll: false

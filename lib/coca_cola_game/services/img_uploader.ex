@@ -39,8 +39,7 @@ defmodule CocaColaGame.ImgUploader do
       :client_error ->
         {:error,
          %{
-           message:
-             " Cloudinary error: Hubó errores al conectar con el servicio de storage."
+           message: " Cloudinary error: Hubó errores al conectar con el servicio de storage."
          }}
 
       body ->

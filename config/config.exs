@@ -30,8 +30,8 @@ config :phoenix, :json_library, Jason
 config :phoenix, template_engines: [leex: Phoenix.LiveView.Engine]
 
 config :coca_cola_game, CocaColaGame.Guardian,
-issuer: "coca_cola_game",
-secret_key: "owX6TXttuZ6wg/H3d1a3saIw4aXJbMm0JJwEEWDkYrlv4WeSKNIzfm7vLjuDHL6b"
+  issuer: "coca_cola_game",
+  secret_key: "owX6TXttuZ6wg/H3d1a3saIw4aXJbMm0JJwEEWDkYrlv4WeSKNIzfm7vLjuDHL6b"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

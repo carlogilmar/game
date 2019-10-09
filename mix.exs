@@ -45,7 +45,7 @@ defmodule CocaColaGame.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 3.1"},
       {:httpoison, "~> 1.2.0"},
-      {:phoenix_live_view, github:  "phoenixframework/phoenix_live_view"},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:rop, "~> 0.5"},
       {:comeonin, "~> 5.1"},
       {:argon2_elixir, "~> 2.0"},

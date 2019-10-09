@@ -33,7 +33,7 @@ defmodule CocaColaGameWeb.Router do
   end
 
   scope "/home", CocaColaGameWeb do
-		pipe_through [:browser, :browser_pipeline, :ensure_auth]
+    pipe_through [:browser, :browser_pipeline, :ensure_auth]
     live "/", FooLive
   end
 end

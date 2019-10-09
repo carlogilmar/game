@@ -16,6 +16,7 @@ defmodule CocaColaGameWeb.LoginController do
     fn
       {false, conn, _params} ->
         render(conn, "index.html", error: "")
+
       {true, conn, params} ->
         session = Session.auth_user(params["username"], params["password"])
         login_reply(session, conn)
@@ -36,5 +37,4 @@ defmodule CocaColaGameWeb.LoginController do
     |> CocaColaGame.Guardian.Plug.sign_out()
     |> redirect(to: "/login")
   end
-
 end
