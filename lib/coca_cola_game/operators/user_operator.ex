@@ -20,6 +20,8 @@ defmodule CocaColaGame.UserOperator do
     query |> Repo.one()
   end
 
+	def get_by_id(id), do: Repo.get(User, id)
+
   defp hash_password(password), do: Argon2.hash_pwd_salt(password)
 
 end
